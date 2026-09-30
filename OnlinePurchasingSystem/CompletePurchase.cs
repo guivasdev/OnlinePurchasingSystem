@@ -7,15 +7,14 @@ public class CompletePurchase
     private readonly Payment _payment = new();
     private readonly Invoice _invoice = new();
 
-    public bool IsCompletePurchase(float productQuantityInt, float productPriceInt, string nameClient)
+    public bool IsCompletePurchase(float productQuantity, float productPriceInt, string nameClient)
     {
         bool isOk = true;
-
-        _invoice.InssueInvoice(nameClient);
-        if (!_stock.HasSufficientStock(productQuantityInt))
+        
+        if (!_stock.HasSufficientStock(productQuantity))
             isOk = false;
 
-        else if (!_payment.HasSufficientPayment(productPriceInt))
+        else if (!_payment.HasSufficientPayment(productPriceInt, productQuantity))
             isOk = false;
 
         else if (!_invoice.InssueInvoice(nameClient))

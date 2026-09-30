@@ -3,24 +3,24 @@
 //Subsystem two
 public class Payment
 {
-    private float productPrice = 100f;
+    public static readonly float ProductPrice = 10f;
 
-    public bool HasSufficientPayment(float paymentAmount)
+    public bool HasSufficientPayment(float paymentAmount, float productQuantity)
     {
         Console.WriteLine("Analisando o pagamento!");
 
-        for (int i = 0; i < 3; i++)
+        for (var i = 0; i < 3; i++)
         {
             Console.Write(".");
             Thread.Sleep(500);
         }
 
         Console.WriteLine();
-        
-        Console.WriteLine(paymentAmount >= productPrice
+
+        Console.WriteLine(paymentAmount >= ProductPrice
             ? "Pagamento efetuado com sucesso!"
             : "Falha no pagamento, saldo insuficiente!");
 
-        return paymentAmount >= productPrice;
+        return paymentAmount >= ProductPrice;
     }
 }
