@@ -3,7 +3,7 @@
 //Subsystem One
 public class Stock
 {
-    private const int Amount = 10;
+    public static int  Amount => 10;
 
     public bool HasSufficientStock(float orderQuantity)
     {

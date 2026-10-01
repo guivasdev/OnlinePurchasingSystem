@@ -8,7 +8,7 @@ public class CompletePurchase
     private readonly Invoice _invoice = new();
 
     public bool IsCompletePurchase(float productQuantity, float productPriceInt, string nameClient)
-    {
+    { 
         bool isOk = true;
         
         if (!_stock.HasSufficientStock(productQuantity))

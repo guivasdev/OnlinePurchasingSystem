@@ -3,7 +3,7 @@
 //Subsystem two
 public class Payment
 {
-    public static readonly float ProductPrice = 10f;
+    public static float ProductPrice => 10f;
 
     public bool HasSufficientPayment(float paymentAmount, float productQuantity)
     {
